@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void solve(int t)
+{
+    int a, b;
+    cin >> a >> b;
+
+    int calc = (3 + 5 + 3) + a * 4 + 3 + 5 + abs(a - b) * 4;
+
+    cout << "Case " << t << ": " << calc << endl;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+
+    for (int i = 1; i <= t; i++)
+        solve(i);
+
+    return 0;
+}
