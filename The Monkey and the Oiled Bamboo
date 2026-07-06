@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int t;
+    scanf("%d", &t);
+
+    for (int i = 1; i <= t; i++)
+    {
+        int n;
+        scanf("%d", &n);
+
+        int r[100005]; 
+        r[0] = 0;
+
+        for (int j = 1; j <= n; j++)
+            scanf("%d", &r[j]);
+
+        int ans = 0;
+
+        for (int k = n; k >= 1; k--)
+        {
+            int diff = r[k] - r[k - 1];
+
+            if (diff > ans)
+                ans = diff;
+
+            else if (diff == ans)
+                ans++;
+        }
+
+        printf("Case %d: %d\n", i, ans);
+    }
+
+    return 0;
+}
