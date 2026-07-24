@@ -1,0 +1,45 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    int prices[10005];
+
+    while (cin >> n)
+    {
+        for (int i = 0; i < n; i++)
+            cin >> prices[i];
+
+        int m;
+        cin >> m;
+
+        sort(prices, prices + n);
+
+        int left = 0, right = n - 1;
+        int book1 = 0, book2 = 0;
+
+        while (left < right)
+        {
+            int sum = prices[left] + prices[right];
+
+            if (sum == m)
+            {
+                book1 = prices[left];
+                book2 = prices[right];
+                left++;
+                right--;
+            }
+            else if (sum < m)
+                left++;
+            else
+                right--;
+        }
+
+        cout << "Peter should buy books whose prices are " << book1 << " and " << book2 << "." << endl;
+        cout << endl;
+    }
+
+    return 0;
+}
