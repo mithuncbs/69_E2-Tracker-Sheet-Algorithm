@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int evenc = 0, oddc = 0;
+    int last_eveni = 0, last_oddi = 0;
+
+    for (int i = 1; i <= n; i++)
+    { 
+        int num;
+        cin >> num;
+
+        if (num % 2 == 0)
+        {
+            evenc++;
+            last_eveni = i;
+        }
+        else
+        {
+            oddc++;
+            last_oddi = i;
+        }
+    }
+
+    if (evenc == 1)
+        cout << last_eveni << endl;
+    else
+        cout << last_oddi << endl;
+
+    return 0;
+}
