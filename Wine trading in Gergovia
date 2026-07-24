@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n;
+    while (cin >> n && n != 0)
+    {
+        long long ans = 0;
+        long long balance = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            long long a;
+            cin >> a;
+
+            balance += a;
+            ans += abs(balance);
+        }
+
+        cout << ans << endl;
+    }
+
+    return 0;
+}
