@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int luckyNum[] = {4, 7, 44, 47, 74, 477, 474, 447, 444, 744, 747, 774, 777};
+
+    bool lucky = false;
+
+    for (int i = 0; i < 13; i++)
+    {
+        if (n % luckyNum[i] == 0)
+        {
+            lucky = true;
+            break;
+        }
+    }
+
+    if (lucky)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+
+    return 0;
+}
