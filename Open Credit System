@@ -1,0 +1,33 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n;
+        cin >> n;
+
+        int highest, score = -150000;
+        cin >> highest;
+
+        for (int i = 1; i < n; i++)
+        {
+            int temp;
+            cin >> temp;
+
+            score = max(score, highest - temp);
+            
+            if (temp > highest)
+                highest = temp;
+        }
+        
+        cout << score << endl;
+    }
+
+    return 0;
+}
