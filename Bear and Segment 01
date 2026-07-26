@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        string s;
+        cin >> s;
+
+        bool start = false, end = false, possible = true;
+
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s[i] == '1')
+            {
+                start = true;
+
+                if (end)
+                {
+                    possible = false;
+                    break;
+                }
+            }
+            else if (s[i] == '0')
+            {
+                if (start)
+                    end = true;
+            }
+        }
+
+        if (start && possible)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+
+    return 0;
+}
