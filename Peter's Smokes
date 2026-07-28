@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    while (cin >> a >> b)
+    {
+        int count = a;
+        int rem = a;
+
+        while (rem >= b)
+        {
+            int temp = rem / b;
+            count += temp;
+            rem = (rem % b) + temp;
+        }
+
+        cout << count << "\n";
+    }
+
+    return 0;
+}
