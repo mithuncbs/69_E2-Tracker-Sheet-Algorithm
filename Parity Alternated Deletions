@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+
+{
+    int n;
+    cin >> n;
+
+    int even[n], odd[n];
+    int e = 0, o = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int temp;
+        cin >> temp;
+        if (temp % 2 == 0)
+        {
+            even[e] = temp;
+            e++;
+        }
+        else
+        {
+            odd[o] = temp;
+            o++;
+        }
+    }
+
+    sort(even, even + e);
+    sort(odd, odd + o);
+
+    long long ans = 0;
+
+    if (e > o)
+    {
+        int rem = e - (o + 1);
+        for (int i = 0; i < rem; i++)
+            ans += even[i];
+    }
+    else
+    {
+        int rem = o - (e + 1);
+        for (int i = 0; i < rem; i++)
+            ans += odd[i];
+    }
+
+    cout << ans << endl;
+    return 0;
+}
