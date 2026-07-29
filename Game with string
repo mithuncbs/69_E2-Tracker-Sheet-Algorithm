@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -8,21 +6,18 @@ int main()
     string s;
     cin >> s;
 
-    int temp = -1;
+    string st;
     int moves = 0;
 
     for (int i = 0; i < s.length(); i++)
     {
-        if (temp >= 0 && s[temp] == s[i])
+        if (st.size() > 0 && st[st.size() - 1] == s[i])
         {
-            temp--;
+            st.pop_back();
             moves++;
         }
-        else
-        {
-            temp++;
-            s[temp] = s[i];
-        }
+        else  
+            st.push_back(s[i]);
     }
 
     if (moves % 2 != 0)
