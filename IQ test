@@ -7,7 +7,7 @@ int main()
     cin >> n;
 
     int evenc = 0, oddc = 0;
-    int last_eveni = 0, last_oddi = 0;
+    int eveni = 0, oddi = 0;
 
     for (int i = 1; i <= n; i++)
     { 
@@ -17,19 +17,19 @@ int main()
         if (num % 2 == 0)
         {
             evenc++;
-            last_eveni = i;
+            eveni = i;
         }
         else
         {
             oddc++;
-            last_oddi = i;
+            oddi = i;
         }
     }
 
     if (evenc == 1)
-        cout << last_eveni << endl;
+        cout << eveni << endl;
     else
-        cout << last_oddi << endl;
+        cout << oddi << endl;
 
     return 0;
 }
