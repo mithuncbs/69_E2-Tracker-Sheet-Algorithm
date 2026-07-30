@@ -1,59 +1,22 @@
 #include <iostream>
-
 using namespace std;
 
-void solve(int t)
+int main()
 {
-    int a, b, c;
-    cin >> a >> b >> c;
+    int t;
+    cin >> t;
 
-    int p, q;
-    cin >> p >> q;
-
-    int total = 0;
-
-    if (q >= p && c > 0 && a > 1)
+    for (int i = 1; i <= t; i++)
     {
-        for (int i = 1; i <= c; i++)
-        {
-            if (a > 1 && i > 0)
-            {
-                a = a - 2;
-                total = total + q;
-            }
-            else
-                break;
-        }
+        int a, b, c;
+        cin >> a >> b >> c;
 
-        if (a > 1 && b > 0)
-        {
-            for (int i = 1; i <= b; i++)
-            {
-                if (a > 1 && i > 0)
-                {
-                    a = a - 2;
-                    total = total + p;
-                }
-                else
-                    break;
-            }
-        }
-    }
+        int p, q;
+        cin >> p >> q;
 
-    else
-    {
-        for (int i = 1; i <= b; i++)
-        {
-            if (a > 1 && i > 0)
-            { 
-                a = a - 2;
-                total = total + p;
-            }
-            else
-                break;
-        }
+        int total = 0;
 
-        if (a > 1 && c > 0)
+        if (q >= p && c > 0 && a > 1)
         {
             for (int i = 1; i <= c; i++)
             {
@@ -65,22 +28,52 @@ void solve(int t)
                 else
                     break;
             }
+
+            if (a > 1 && b > 0)
+            {
+                for (int i = 1; i <= b; i++)
+                {
+                    if (a > 1 && i > 0)
+                    {
+                        a = a - 2;
+                        total = total + p;
+                    }
+                    else
+                        break;
+                }
+            }
         }
+
+        else
+        {
+            for (int i = 1; i <= b; i++)
+            {
+                if (a > 1 && i > 0)
+                {
+                    a = a - 2;
+                    total = total + p;
+                }
+                else
+                    break;
+            }
+
+            if (a > 1 && c > 0)
+            {
+                for (int i = 1; i <= c; i++)
+                {
+                    if (a > 1 && i > 0)
+                    {
+                        a = a - 2;
+                        total = total + q;
+                    }
+                    else
+                        break;
+                }
+            }
+        }
+
+        cout << total << endl;
     }
-
-    cout << total << endl;
-}
-
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int t;
-    cin >> t;
-
-    for (int i = 1; i <= t; i++)
-        solve(i);
 
     return 0;
 }
