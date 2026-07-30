@@ -6,26 +6,22 @@ int main()
     string s;
     cin >> s;
 
-    char arr[s.length()];
+    string arr;
     int count = 0;
 
     for (int i = 0; i < s.length(); i++)
     {
         if (s[i] != '+')
-        {
-            arr[count] = s[i];
-            count++;
-        }
+            arr.push_back(s[i]);
     }
 
-    sort(arr, arr + count);
+    sort(arr.begin(), arr.end());
 
-    for (int i = 0; i < count; i++)
+    cout << arr[0];
+    for (int i = 1; i < arr.length(); i++)
     {
+        cout << "+";
         cout << arr[i];
-
-        if (i != count - 1)
-            cout << "+";
     }
 
     cout << endl;
