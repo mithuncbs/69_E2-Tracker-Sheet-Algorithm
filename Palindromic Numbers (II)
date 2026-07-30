@@ -1,34 +1,25 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-void solve(int t)
-{
-    string s;
-    cin >> s;
-
-    string p = s;
-
-    reverse(s.begin(), s.end());
-
-    if (p == s)
-        cout << "Case " << t << ": Yes\n";
-    else
-        cout << "Case " << t << ": No\n";
-}
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
     int t;
     cin >> t;
 
     for (int i = 1; i <= t; i++)
-        solve(i);
+    {
+        string s;
+        cin >> s;
+
+        string p = s;
+
+        reverse(s.begin(), s.end());
+
+        if (p == s)
+            cout << "Case " << i << ": Yes\n";
+        else
+            cout << "Case " << i << ": No\n";
+    }
 
     return 0;
 }
